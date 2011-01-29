@@ -12,4 +12,17 @@
 
     <bean id="disposableInitializing" class="com.kumtakar.test.DisposableInitializing"/>
 
+    <bean id="propertyOverride" class="com.kumtakar.test.override.PropertyOverride">
+        <property name="algorithmRequired" value="SHA"/>
+    </bean>
+
+    <bean id="propertyOverride1" class="com.kumtakar.test.override.PropertyOverride">
+        <property name="algorithmRequired" value="SHA"/>
+    </bean>
+    
+    <bean class="org.springframework.beans.factory.config.PropertyOverrideConfigurer">
+        <property name="locations" value="classpath:override.properties"/>
+    </bean>
+
+
 </beans>
