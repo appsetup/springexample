@@ -24,5 +24,15 @@
         <property name="locations" value="classpath:override.properties"/>
     </bean>
 
+    <bean id="singletonDependent" class="com.kumtakar.test.factorybean.Singletondependent">
+        <property name="singletondependent">
+            <bean class="com.kumtakar.test.factorybean.SingletonFactoryBean"/>
+        </property>
+    </bean>
 
+    <bean id="singletonDependent1" class="com.kumtakar.test.factorybean.Singletondependent">
+        <property name="singletondependent" ref="singletonClass"/>
+    </bean>
+
+    <bean id="singletonClass" class="com.kumtakar.test.factorybean.SingletonClass" factory-method="getInstance"/>
 </beans>
